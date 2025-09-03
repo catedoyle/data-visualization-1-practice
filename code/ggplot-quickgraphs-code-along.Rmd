@@ -52,14 +52,17 @@ Load your data:
 ```{r}
 # Load the penguins dataset
 # Dataset must be saved in the same place as your .Rmd to load data properly
+# ../xxx/ tells relationally how files are related, .. go up file /into xxx/
 
-penguins <- read_csv("penguins.csv")
+socialMedia <- read_csv("../data/socialMediaAddiction.csv")
 
 # Check out a "glimpse" of the variables of your dataframe
 
-glimpse(penguins)
+glimpse(socialMedia)
+socialMedia
 
-penguins
+socialMediaMetadata <- read_csv("../data/socialMediaAddictionMetadata.txt")
+socialMediaMetadata
 
 ```
 
@@ -89,13 +92,15 @@ First you'll make a *histogram* to understand the distribution of penguin weight
 #aes is aesthetics, defines axis, colors, shapes
 # add geometry data with geom_
 
-penguins %>% 
-  ggplot(mapping = aes(x = body_mass_g)) +
+socialMedia %>% 
+  ggplot(mapping = aes(x = Avg_Daily_Usage_Hours)) +
   geom_histogram()
 
-
+socialMedia %>% 
+  ggplot(mapping = aes(x = Sleep_Hours_Per_Night)) +
+  geom_histogram()
 ```
-
+Step 5: The distributions of Avg_Daily_Usage_Hours and Sleep_Hours_Per_Night are both relatively normal. Avg_Daily_Usage_Hours has an extreme high count between 4-5 hours and Sleep_Hours_Per_Night has a very far fewer counts at the tails. I would hypothesize that Avg_Daily_Usage_Hours has a relatively normal distribution because . I would hypothesize that Sleep_Hours_Per_Night also has a relatively normal distribution because .
 
 
 Next you'll plot a boxplot of body mass by Sex to see how the body mass of male and female penguins differ. 
