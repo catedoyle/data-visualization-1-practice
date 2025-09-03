@@ -142,14 +142,14 @@ penguins %>%
 
 Now it's time for some scatter plots. Is the bill length of a penguin associated with penguin weight? What if we separate our data by species?
 
-
+Step 6: I would create a scatterplot with social media usage on the x axis and hours of sleep on the y axis. This is because I want to see the correlation between these two variables and can include a line of best fit too.
 ```{r scatterplot}
 
 # Scatterplot of bill length and weight
 #geom smooth and geom smooth method for trendline
 
-penguins %>%
-  ggplot(mapping = aes(bill_length_mm, y = body_mass_g)) +
+socialMedia %>%
+  ggplot(mapping = aes(x = Sleep_Hours_Per_Night, y = Avg_Daily_Usage_Hours)) +
   geom_point() +
   geom_smooth(method = "lm")
 
@@ -159,6 +159,8 @@ penguins %>%
 
 
 ```
+Step 8: It appears that there is an indirect relationship between social media usage and sleep. The higher the social media usage, the less sleep an individual gets.
+
 
 **What can you see here?** 
 
