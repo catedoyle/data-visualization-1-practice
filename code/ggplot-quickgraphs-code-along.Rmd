@@ -90,26 +90,18 @@ socialMedia %>%
 ```
 Step 11: Preferred social media app impacts social media addiction as individuals whose most used apps were WhatsApp had higher average usage than individuals whose most used apps were LINE or LinkedIn.
 
-Step 12:
+Step 12: Does the relationship between social media usage and academic level vary by relationship status?
 
-Step 13:
+Step 13: I would use a box plot with average daily usage on the y axis, academic level on the x axis, and relationship status indicated by boxplot color on a legend.
 
 Step 14:
 ```{r}
 # Plot boxplot of body mass by penguin species
 #using color or fill equals x2 you can differentiate with a legend
 
-penguins %>%
-  ggplot(mapping = aes(x = species, y = body_mass_g, color = sex)) +
+socialMedia %>%
+  ggplot(mapping = aes(x = Academic_Level, y = Avg_Daily_Usage_Hours, color = Relationship_Status)) +
   geom_boxplot()  
 
-# Plot boxplot of body mass by penguin Sex separated by species
-#for multiple categorical variables
-#facet has seperate plots for x1 with x2 plotted for each
-
-penguins %>%
-  ggplot(mapping = aes(x = species, y = body_mass_g)) +
-  geom_boxplot() +
-  facet_wrap(~sex)
 ```
-Step 15: 
+Step 15: High school students appear to have higher overall average daily usage compared to undergraduate and graduate students, and the usage is relatively consistent across relationship statuses, which was also seen for undergraduates, while graduate students in a "complicated relationship" had less usage than graduate students in a relationship or single.
