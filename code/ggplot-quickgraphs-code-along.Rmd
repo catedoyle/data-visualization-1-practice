@@ -32,12 +32,12 @@ socialMedia <- read_csv("../data/socialMediaAddiction.csv")
 glimpse(socialMedia)
 socialMedia
 
+#look at metadata
+
 socialMediaMetadata <- read_csv("../data/socialMediaAddictionMetadata.txt")
 socialMediaMetadata
 
 ```
-
-
 Step 4:
 
 ```{r histogram}
@@ -55,14 +55,14 @@ socialMedia %>%
   ggplot(mapping = aes(x = Sleep_Hours_Per_Night)) +
   geom_histogram()
 ```
-Step 5: The distributions of Avg_Daily_Usage_Hours and Sleep_Hours_Per_Night are both relatively normal. Avg_Daily_Usage_Hours has an extreme high count between 4-5 hours and Sleep_Hours_Per_Night has a very far fewer counts at the tails. I would hypothesize that Avg_Daily_Usage_Hours has a relatively normal distribution because . I would hypothesize that Sleep_Hours_Per_Night also has a relatively normal distribution because .
+Step 5: The distributions of Avg_Daily_Usage_Hours and Sleep_Hours_Per_Night are both relatively normal. Avg_Daily_Usage_Hours has an extreme high count between 4-5 hours and Sleep_Hours_Per_Night has a very far fewer counts at the tails. I would hypothesize that Avg_Daily_Usage_Hours has a relatively normal distribution because most people only have around 4 hours to spend on social media a day and this probably varies above and below similarly based on having a heavier/lighter workload or job day length. I would hypothesize that Sleep_Hours_Per_Night also has a relatively normal distribution centered around 7 because humans need 6-8 hours of sleep to stay healthy and normal distributions are very common in nature likely for a similar reason of longer/shorter workdays or natural sleeping patterns.
 
 Step 6: I would create a scatterplot with social media usage on the x axis and hours of sleep on the y axis. This is because I want to see the correlation between these two variables and can include a line of best fit too.
 
 Step 7:
 ```{r scatterplot}
 
-# Scatterplot of bill length and weight
+# Scatterplot of sleep per night and usage
 #geom smooth and geom smooth method for trendline
 
 socialMedia %>%
@@ -71,17 +71,14 @@ socialMedia %>%
   geom_smooth(method = "lm")
 
 
-# Scatterplot of bill length faceted by penguin species
-
-
 
 ```
-Step 8: It appears that there is an indirect relationship between social media usage and sleep. The higher the social media usage, the less sleep an individual gets.
+Step 8: It appears that there is an indirect relationship between social media usage and sleep--the higher the social media usage, the less sleep an individual gets.
 
 Step 9: I would use a box plot to visualize the association between social media app and usage time. I would have usage on the y axis and social media app on the x axis. This is because box plots can clearly demonstrate a quantitative variable divided according to categorical variable.
 ```{r boxplot}
 
-# Plot boxplot of body mass by penguin Sex
+# Plot boxplot of usage and most used platform
 
 socialMedia %>%
   ggplot(mapping = aes(x = Most_Used_Platform, y = Avg_Daily_Usage_Hours)) +
@@ -96,7 +93,7 @@ Step 13: I would use a box plot with average daily usage on the y axis, academic
 
 Step 14:
 ```{r}
-# Plot boxplot of body mass by penguin species
+# Plot boxplot of usage hours by academic level, split by relationship status
 #using color or fill equals x2 you can differentiate with a legend
 
 socialMedia %>%
@@ -104,4 +101,4 @@ socialMedia %>%
   geom_boxplot()  
 
 ```
-Step 15: High school students appear to have higher overall average daily usage compared to undergraduate and graduate students, and the usage is relatively consistent across relationship statuses, which was also seen for undergraduates, while graduate students in a "complicated relationship" had less usage than graduate students in a relationship or single.
+Step 15: High school students appear to have higher overall average daily usage compared to undergraduate and graduate students, and the usage is relatively consistent across relationship statuses, which was also seen for undergraduates, while graduate students in a "complicated" relationship had less usage than graduate students in a relationship or single.
