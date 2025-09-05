@@ -105,13 +105,13 @@ Step 5: The distributions of Avg_Daily_Usage_Hours and Sleep_Hours_Per_Night are
 
 Next you'll plot a boxplot of body mass by Sex to see how the body mass of male and female penguins differ. 
 
-
+Step 9: I would use a box plot to visualize the association between social media app and usage time. I would have usage on the y axis and social media app on the x axis. This is because box plots can clearly demonstrate a quantitative variable divided according to categorical variable.
 ```{r boxplot}
 
 # Plot boxplot of body mass by penguin Sex
 
-penguins %>%
-  ggplot(mapping = aes(x = sex, y = body_mass_g)) +
+socialMedia %>%
+  ggplot(mapping = aes(x = Most_Used_Platform, y = Avg_Daily_Usage_Hours)) +
   geom_boxplot()
   
 # Plot boxplot of body mass by penguin species
@@ -132,6 +132,7 @@ penguins %>%
 
 
 ```
+Step 11: Preferred social media app impacts social media addiction as individuals whose most used apps were WhatsApp had higher average usage than individuals whose most used apps were LINE or LinkedIn.
 
 **What can you see here?** 
 
